@@ -1,19 +1,32 @@
 import React, { useState } from "react";
-const [formState, setFormState] = useState({
-    name: "",
-    email: "",
-    message: "",
-});
-const { name, email, message } = formState;
 
-function ContactForm() {
-  // JSX
+
+
+// const handleSubmit = e => {
+//     e.preventDefault();
+//     console.log("username is " + name);
+//     console.log("password is " + email);
+//     console.log("password is " + message);
+//   };
+
+  function ContactForm() {
+    const [formState, setFormState] = useState({
+        name: "",
+        email: "",
+        message: "",
+    });
+    const { name, email, message } = formState;
+
+    function handleChange(e) {
+        setFormState({ ...formState, [e.target.name]: e.target.value });
+      }
+      console.log(formState);
+      
+    // JSX
   return (
     <section>
       <h1>Contact Me</h1>
-      {/* not sure if the following line goes here */}
-      <input type="email" name="email" defaultValue={formState.name} />
-      <form id="contact-form" onSubmit={handleSubmit}>
+      <form id="contact-form">
         <div>
           <label htmlFor="name">Name:</label>
           <input
@@ -45,10 +58,7 @@ function ContactForm() {
       </form>
     </section>
   );
-  function handleChange(e) {
-    setFormState({ ...formState, [e.target.name]: e.target.value });
-  }
+  
 }
-console.log(formState);
 
 export default ContactForm;
