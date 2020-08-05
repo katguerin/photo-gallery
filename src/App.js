@@ -3,10 +3,9 @@ import Nav from "./components/Nav";
 import About from "./components/About";
 import Gallery from "./components/Gallery";
 import ContactForm from "./components/Contact";
-
+import './index.css';
 
 function App() {
-  const [contactSelected, setContactSelected] = useState(false);
   const [categories] = useState([
     {
       name: "commercial",
@@ -21,6 +20,7 @@ function App() {
     },
   ]);
 
+  const [contactSelected, setContactSelected] = useState(false);
   const [currentCategory, setCurrentCategory] = useState(categories[0]);
 
   return (
@@ -35,9 +35,7 @@ function App() {
       <main>
         {!contactSelected ? (
           <>
-          {/* class has for gallery:
-          <Gallery currentCategory={currentCategory}></Gallery> */}
-          <Gallery category={currentCategory.name}></Gallery>
+          <Gallery currentCategory={currentCategory}></Gallery>
           <About></About>
           </>
         ) : (
