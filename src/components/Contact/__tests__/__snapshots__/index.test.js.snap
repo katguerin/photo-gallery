@@ -6,7 +6,7 @@ exports[`Contact is rendering matches snapshot 1`] = `
     <h1
       data-testid="h1tag"
     >
-      Contact Me
+      Contact me
     </h1>
     <form
       id="contact-form"
